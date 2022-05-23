@@ -192,21 +192,17 @@ async function envoiMail(mail) {
       },
     });
   
-    // send mail with defined transport object
     let info = await transporter.sendMail({
-      from: '"ne pas répondre IconCaps" <mickael.pot@hotmail.fr>', // sender address
-      to: mail, // list of receivers
-      subject: "Bienvenue sur IconCaps", // Subject line
-      text: "Votre compte a été crée. Merci de vous connecter", // plain text body
-      html: "<b>Bienvenue sur IconCaps</b>", // html body
+      from: '"ne pas répondre IconCaps" <mickael.pot@hotmail.fr>',
+      to: mail, 
+      subject: "Bienvenue sur IconCaps",
+      text: "Votre compte a été crée. Merci de vous connecter",
+      html: "<b>Bienvenue sur IconCaps</b>", 
     });
   
     console.log("Message sent: %s", info.messageId);
-    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
   
-    // Preview only available when sending through an Ethereal account
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-    // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
   }
   
   envoiMail().catch(console.error);
@@ -216,7 +212,7 @@ async function envoiMail(mail) {
         service: 'hotmail',
         auth: {
           user: 'mick_74@hotmail.com',
-          pass: 'withoutyou'
+          pass: '****'
         }
       });
       
